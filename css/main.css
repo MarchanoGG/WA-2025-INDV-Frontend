@@ -8,8 +8,11 @@
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
+    box-sizing: border-box; /* Zorgt ervoor dat paddings niet buiten de div vallen */
 }
-
+html, body {
+    height: 100%;
+}
 /* Reset button styling zodat ik vanaf scratch kan aanpassen, want de standaard styling is irritant */
 button {
     margin: 0;
