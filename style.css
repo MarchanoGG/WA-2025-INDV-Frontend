@@ -1,0 +1,41 @@
+/* Importeer de font uit google webfonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Reset alle paddings en margins in het document, irritant */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.header {
+    background-color: rgb(24, 24, 24);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px 0 24px;
+}
+.header__logo {
+    font-weight: 700;
+}
+.header__menu {
+    display: flex;
+}
+.header__menuitem {
+    color: white;
+    text-decoration: none;
+    padding: 24px 16px;
+    transition: all 0.2s ease-in-out;
+}
+.header__menuitem:hover {
+    background-color: rgb(0, 75, 0);
+}
+.header__menuitem-active {
+    background-color: #00AC0B;
+}
+.header__menuitem-active:hover {
+    background-color: #00AC0B;
+}
