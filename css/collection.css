@@ -1,0 +1,45 @@
+
+/* 
+    ! Opmerking: Ik ga geen styling toevoegen voor de dropdown/select fields zodat het overeenkomt met het design.
+    Dit is omdat het standaard al oke is, en het overschrijven van de standaard styling
+    kost me veel lijnen aan CSS. Dit zorgt ervoor dat de code 'bloated' word.
+    Het lijkt me logisch om dit dus over te slaan en de belangrijke kenmerken van de code te laten uitblinken.
+*/
+
+.collection__title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+.collection__filter-title {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+
+/* === Filters === */
+.collection__filters {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 24px;
+}
+
+.collection-filter__dropdown *, .collection-filter__amount * {
+    font-size: 18px;
+    padding: 2px;
+}
+
+.collection-filter__apply {
+    /* Dit zorgt ervoor dat het rechts blijft, in het geval van display flex */
+    margin-right: 0;
+    margin-left: auto;
+
+    background-color: #00AC0B;
+    color: white;
+    padding: 16px 24px;
+    font-size: 18px;
+    font-weight: 800;
+    border-radius: 4px;
+    cursor: pointer;
+}

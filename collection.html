@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/collection.css">
     <title>Home - Scifi Book Collector</title>
 </head>
 <body>
@@ -25,7 +26,55 @@
 
 
 
+    <div class="collection spacing">
+        <div class="collection__container container">
+            <h1 class="collection__title">Boeken collectie</h1>
+            
+            <h2 class="collection__filter-title">Sorteer</h2>
+            <div class="collection__filters">
 
+                <!-- Attribuut -->
+                <div class="collection-filter__dropdown collection-filter__attribute">
+                    <select name="attributes" id="attributes">
+                        <option value="title">Titel</option>
+                        <option value="author">Auteur</option>
+                        <option value="rating">Cijfer</option>
+                    </select>
+                </div>
+
+                <!-- Richting -->
+                <div class="collection-filter__dropdown collection-filter__direction">
+                    <select name="direction" id="direction">
+                        <option value="asc">Oplopend</option>
+                        <option value="desc">Aflopend</option>
+                    </select>
+                </div>
+
+                <!-- Hoeveelheid boeken per pagina -->
+                <div class="collection-filter__amount">
+                    <input type="number" id="amount" name="amount" min="1" max="50" value="5">
+                    <label for="amount">boeken per pagina</label>
+                </div>
+
+                <!-- Toepassen Button -->
+                <button class="collection-filter__apply">Filter Toepassen</button>
+            </div>
+
+            <div class="collection__books">
+
+                <div class="collection-book">
+                    <img src="img/book1.jpg" alt="Book 1" class="collection-book__image">
+                    <div class="collection-book__content">
+                        <h3 class="collection-book__title">Dune</h3>
+                        <p class="collection-book__author">Frank Herbert</p>
+                        <p class="collection-book__rating">4</p>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
 
 
 
