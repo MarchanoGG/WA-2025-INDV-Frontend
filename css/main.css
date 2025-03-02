@@ -13,6 +13,7 @@
 html, body {
     height: 100%;
 }
+
 /* Reset button styling zodat ik vanaf scratch kan aanpassen, want de standaard styling is irritant */
 button {
     margin: 0;
@@ -20,4 +21,15 @@ button {
     background: none;
     border: none;
     outline: none;
+}
+
+
+/* Overige utility classes voor spacings etc */
+.spacing {
+    padding: 0 24px;
+}
+.container {
+    max-width: 1300px;
+    width: 100%;
+    margin: 60px auto;
 }

@@ -1,0 +1,61 @@
+.text-media__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.text-media__image {
+    max-width: 600px;
+    min-width: 400px;
+    max-height: 400px;
+    width: 100%;
+    height: 100%;
+}
+.text-media__image img {
+    object-fit: cover;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+}
+
+.text-media__content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.text-media__title {
+    font-size: 32px;
+    font-weight: 800;
+}
+.text-media__text {
+    font-size: 20px;
+    color: #414141;
+}
+
+
+@media (max-width: 768px) {
+    .text-media__container {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .text-media__image {
+        max-width: 100%;
+        min-width: 100%;
+        aspect-ratio: 16 / 9; /* Zorgt ervoor dat het altijd in een 16/9 ratio blijft zitten. Zo hoef ik geen height op te geven */
+    }
+    .text-media__image img {
+        width: 100%;
+        height: 100%;
+    }
+    .text-media__content {
+        gap: 12px;
+    }
+    .text-media__title {
+        font-size: 24px;
+    }
+    .text-media__text {
+        font-size: 16px;
+    }
+}
