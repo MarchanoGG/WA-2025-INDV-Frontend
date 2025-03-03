@@ -80,3 +80,29 @@
 .collection-book__rating {
     margin-bottom: 0;
 }
+
+
+/* === Pagination === */
+.collection__paging {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+.collection-paging {
+    font-size: 24px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.collection-paging__current {
+    background-color: #2E2E2E;
+    color: white;
+}
+
+.collection-paging__inactive {
+    background-color: #EAEAEA;
+    color: #2E2E2E;
+    border: #8F8F8F 2px solid;
+}
