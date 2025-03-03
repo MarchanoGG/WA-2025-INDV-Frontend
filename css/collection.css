@@ -24,12 +24,10 @@
     margin-bottom: 24px;
     gap: 24px;
 }
-
 .collection-filter__dropdown *, .collection-filter__amount * {
     font-size: 18px;
     padding: 2px;
 }
-
 .collection-filter__apply {
     /* Dit zorgt ervoor dat het rechts blijft, in het geval van display flex */
     margin-right: 0;
@@ -42,4 +40,43 @@
     font-weight: 800;
     border-radius: 4px;
     cursor: pointer;
+}
+
+
+/* === Books === */
+#collection__books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.collection-book {
+    width: calc(20% - 16px);
+}
+.collection-book__image {
+    width: 100%;
+    aspect-ratio: 6/9; /* Standaard aspect-ratio van boeken volgens ChatGPT: Prompt: 'Wat is de gemiddelde aspect ratio van een boek cover?' */
+    background-size: cover;
+    background-position: center;
+}
+.collection-book__content {
+    background-color: #1a1a1a;
+    color: white;
+    margin-top: -5px;
+    padding: 12px;
+}
+.collection-book__title {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+.collection-book__author, .collection-book__rating {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+.collection-book__author span, .collection-book__rating span {
+    font-weight: 800;
+}
+.collection-book__rating {
+    margin-bottom: 0;
 }

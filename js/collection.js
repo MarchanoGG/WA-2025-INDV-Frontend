@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 <img src="img/covers/${book.image}" alt="${book.title}" class="collection-book__image">
                 <div class="collection-book__content">
                     <h3 class="collection-book__title">${book.title}</h3>
-                    <p class="collection-book__author">${book.author}</p>
-                    <p class="collection-book__rating">${book.rating}</p>
+                    <p class="collection-book__author"> <span>Auteur:</span> ${book.author}</p>
+                    <p class="collection-book__rating"> <span>Cijfer:</span> ${book.rating}</p>
                 </div>
             `;
 
