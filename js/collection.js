@@ -38,4 +38,39 @@ document.addEventListener("DOMContentLoaded", function() {
     // maar dit is duidelijker vind ik voor de eerste opdracht van het semester.
     renderBooks(books);
 
+
+
+    // Wat complexere functie dat de paginering toepast.
+    function applyPagination(amountOfBooksPerPage) {
+        const collectionBooks = document.getElementById("collection__books");
+        if (collectionBooks === null) { // Zie lijn 10 voor uitleg.
+            return;
+        }
+
+        const pagination = document.getElementById("collection__paging");
+        const allBooks = collectionBooks.querySelectorAll(".collection-book");
+        const amountOfPages = Math.ceil(allBooks.length / amountOfBooksPerPage); // Deel het aantal boeken door de hoeveelheid boeken per pagina en rond af naar boven.
+
+        pagination.innerHTML = ""; // Dubbelcheck of div leeg is.
+        
+        // Render de paginering
+        // <button class="collection-paging collection-paging__current">1</button>
+        // <button class="collection-paging collection-paging__inactive">2</button>
+        // <button class="collection-paging collection-paging__inactive">3</button>
+
+        for (let i = 0; i < amountOfPages; i++) {
+            const pageButton = document.createElement("button");
+            pageButton.classList.add("collection-paging");
+            pageButton.textContent = i + 1; // +1 omdat we willen dat de paginering begint bij 1 en niet bij 0.
+
+            if (i === 0) { // Als de huidige pagina 0 is, dan voeg de class 'collection-paging__current' toe.
+                pageButton.classList.add("collection-paging__current");
+            } else { // Anders voeg de class 'collection-paging__inactive' toe.
+                pageButton.classList.add("collection-paging__inactive");
+            }
+            pagination.appendChild(pageButton); // Voeg de button toe aan de div.
+        }
+    }
+
+    applyPagination(5);
 });

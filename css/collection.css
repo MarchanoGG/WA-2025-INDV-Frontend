@@ -83,7 +83,7 @@
 
 
 /* === Pagination === */
-.collection__paging {
+#collection__paging {
     display: flex;
     justify-content: center;
     gap: 12px;
