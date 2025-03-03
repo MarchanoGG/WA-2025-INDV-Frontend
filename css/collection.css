@@ -46,6 +46,21 @@
     cursor: pointer;
 }
 
+@media (max-width: 768px) {
+    .collection__filters {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .collection-filter__dropdown *, .collection-filter__amount * {
+        font-size: 16px;
+    }
+    .collection-filter__apply {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
 
 /* === Books === */
 #collection__books {
@@ -84,6 +99,12 @@
 }
 .collection-book__rating {
     margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .collection-book {
+        width: calc(50% - 16px);
+    }
 }
 
 
