@@ -31,10 +31,10 @@
             <h1 class="collection__title">Boeken collectie</h1>
             
             <h2 class="collection__filter-title">Sorteer</h2>
-            <div class="collection__filters">
+            <div class="collection__filters" id="collection__filters">
 
                 <!-- Attribuut -->
-                <div class="collection-filter__dropdown collection-filter__attribute">
+                <div class="collection-filter__dropdown" id="collection-filter__attribute">
                     <select name="attributes" id="attributes">
                         <option value="title">Titel</option>
                         <option value="author">Auteur</option>
@@ -43,7 +43,7 @@
                 </div>
 
                 <!-- Richting -->
-                <div class="collection-filter__dropdown collection-filter__direction">
+                <div class="collection-filter__dropdown" id="collection-filter__direction">
                     <select name="direction" id="direction">
                         <option value="asc">Oplopend</option>
                         <option value="desc">Aflopend</option>
@@ -51,13 +51,14 @@
                 </div>
 
                 <!-- Hoeveelheid boeken per pagina -->
-                <div class="collection-filter__amount">
+                <div class="collection-filter__amount" id="collection-filter__amount">
                     <input type="number" id="amount" name="amount" min="1" max="50" value="5">
                     <label for="amount">boeken per pagina</label>
                 </div>
 
                 <!-- Toepassen Button -->
-                <button class="collection-filter__apply">Filter Toepassen</button>
+                <button class="collection-filter__apply" id="collection-filter__apply">Filter Toepassen</button>
+
             </div>
 
             <div id="collection__books">

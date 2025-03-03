@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         pagination.innerHTML = ""; // Dubbelcheck of div leeg is.
-
         for (let i = 0; i < amountOfPages; i++) {
             const pageButton = document.createElement("button");
             pageButton.classList.add("collection-paging");
@@ -95,4 +94,48 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     applyPagination(5);
+
+
+
+
+    // Complexe functie om de sortering toe te passen.
+    function applySorting() {
+        const sortSelect = document.getElementById("collection__filters");
+        if (sortSelect === null) { // Zie lijn 10 voor uitleg.
+            return;
+        }
+        const attributeSelect = document.getElementById("attributes"); // Select voor sorteren op titel, auteur of cijfer.
+        const directionSelect = document.getElementById("direction");   // Select voor sorteer richting (oplopend of aflopend).
+        const amountInput = document.getElementById("amount");          // Input voor het aantal boeken per pagina.
+
+        // Haal de waardes op.
+        const attribute = attributeSelect.value;
+        const direction = directionSelect.value;
+        const amount = parseInt(amountInput.value);
+
+        // Sorteer de boeken array op basis van het gekozen attribuut en de richting.
+        books.sort((firstBook, secondBook) => {
+            let result;
+            
+            // Bepaal het vergelijkingsresultaat afhankelijk van het gekozen attribuut
+            if (attribute === "rating") {
+                // Numerieke vergelijking voor 'rating'
+                result = firstBook.rating - secondBook.rating;
+            } else {
+                // Alfabetische vergelijking voor 'title' en 'author'
+                result = firstBook[attribute].localeCompare(secondBook[attribute]);
+            }
+            // Als de sorteer richting aflopend is, keren we het resultaat simpelweg om.
+            return direction === "asc" ? result : -result;
+        });
+
+        // reload de boeken in de nieuwe sorteervolgorde.
+        renderBooks(books);
+        // Voor de paginering gedeelte
+        applyPagination(amount);
+    }
+
+    const applyButton = document.getElementById("collection-filter__apply"); // De "Filter Toepassen" knop.
+    applyButton.addEventListener("click", applySorting); // Voeg een event listener toe aan de knop.
+    // Kan opzicht ook via een onclick attribuut in de HTML, maar ik vind dit veel leesbaarder.
 });

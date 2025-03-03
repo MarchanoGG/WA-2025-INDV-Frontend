@@ -6,6 +6,10 @@
     Het lijkt me logisch om dit dus over te slaan en de belangrijke kenmerken van de code te laten uitblinken.
 */
 
+.collection {
+    max-height: calc(100vh - 139px);
+    overflow: auto;
+}
 .collection__title {
     font-size: 32px;
     font-weight: 800;
@@ -51,6 +55,7 @@
 }
 .collection-book {
     width: calc(20% - 16px);
+    margin-bottom: 24px;
 }
 .collection-book__image {
     width: 100%;
