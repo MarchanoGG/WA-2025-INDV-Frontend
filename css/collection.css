@@ -96,7 +96,7 @@
     cursor: pointer;
 }
 
-.collection-paging__current {
+.collection-paging__inactive.collection-paging__current, .collection-paging__current { /* ziet er misschien raar uit, maar komt door de volgorde van classes door de JS. Ik kan het in het echt beter onderbouwen als het nodig is */
     background-color: #2E2E2E;
     color: white;
 }

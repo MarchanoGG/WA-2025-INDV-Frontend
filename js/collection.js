@@ -49,27 +49,49 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const pagination = document.getElementById("collection__paging");
         const allBooks = collectionBooks.querySelectorAll(".collection-book");
-        const amountOfPages = Math.ceil(allBooks.length / amountOfBooksPerPage); // Deel het aantal boeken door de hoeveelheid boeken per pagina en rond af naar boven.
+        const amountOfPages = Math.ceil(allBooks.length / amountOfBooksPerPage);
+        let currentPage = 1; // 'let' want deze var zal veranderen.
+
+        // Helperfunctie, zodat we deze kunnen aanroepen wanneer we willen. Wordt vaker gebruikt bij frameworks zoals Vue.
+        function updateVisibility() {
+            allBooks.forEach((book, index) => {
+                let pageNumber = Math.floor(index / amountOfBooksPerPage) + 1;
+                if (pageNumber === currentPage) {
+                    book.style.display = "block";
+                } else {
+                    book.style.display = "none";
+                }
+            });
+        }
 
         pagination.innerHTML = ""; // Dubbelcheck of div leeg is.
-        
-        // Render de paginering
-        // <button class="collection-paging collection-paging__current">1</button>
-        // <button class="collection-paging collection-paging__inactive">2</button>
-        // <button class="collection-paging collection-paging__inactive">3</button>
 
         for (let i = 0; i < amountOfPages; i++) {
             const pageButton = document.createElement("button");
             pageButton.classList.add("collection-paging");
-            pageButton.textContent = i + 1; // +1 omdat we willen dat de paginering begint bij 1 en niet bij 0.
-
-            if (i === 0) { // Als de huidige pagina 0 is, dan voeg de class 'collection-paging__current' toe.
+            pageButton.textContent = i + 1; // Pagina begint bij 1 ipv 0, want dit is normale taal, en geen code.
+    
+            // Zet de eerste pagina standaard op actief
+            if (i === 0) pageButton.classList.add("collection-paging__current");
+            else pageButton.classList.add("collection-paging__inactive");
+    
+            pageButton.addEventListener("click", function () {
+                currentPage = i + 1; // Zelfde logica als hierboven, pagina begint bij n + 1.
+    
+                // Update de knop met de active state
+                document.querySelectorAll(".collection-paging").forEach(btn => {
+                    btn.classList.remove("collection-paging__current");
+                    btn.classList.add("collection-paging__inactive");
+                });
                 pageButton.classList.add("collection-paging__current");
-            } else { // Anders voeg de class 'collection-paging__inactive' toe.
-                pageButton.classList.add("collection-paging__inactive");
-            }
-            pagination.appendChild(pageButton); // Voeg de button toe aan de div.
+    
+                // Pas zichtbaarheid van boeken aan met de helperfunctie
+                updateVisibility();
+            });
+    
+            pagination.appendChild(pageButton);
         }
+        updateVisibility(); // Toon alleen de eerste pagina bij de first load.
     }
 
     applyPagination(5);
