@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Helperfunctie, zodat we deze kunnen aanroepen wanneer we willen. Wordt vaker gebruikt bij frameworks zoals Vue.
         function updateVisibility() {
+            document.title = `Pagina ${currentPage} van Collectie - Scifi Book Collector`;
             allBooks.forEach((book, index) => {
                 let pageNumber = Math.floor(index / amountOfBooksPerPage) + 1;
                 if (pageNumber === currentPage) {
